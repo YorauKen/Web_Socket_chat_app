@@ -92,3 +92,9 @@ export PORT=9001 && npm start // linux/unix platoforms
 set PORT=9001 && npm start // windows platoform
 
 ```
+
+## System Design
+### main
+![system-design](https://github.com/user-attachments/assets/8bc5f542-8a7c-4ad8-8248-f9d234dbc6c4)
+### main2
+![sys-des2](https://github.com/user-attachments/assets/2cf80fc9-750d-4262-bc09-76de9c32b703)
