@@ -5,12 +5,12 @@ import primsaClient from './prisma';
 
 // note the kafka from aiven was from free trial , mostly it wont work , we can setup an offline kafka container running and work
 const kafka = new Kafka({
-	brokers:['kafka-5099942-hiteshyadavm007-yoru.l.aivencloud.com:28162'],
+	brokers:['*****'],
 	ssl:{
 		ca:[fs.readFileSync(path.resolve("./ca.pem"),"utf-8")],	
 	},
 	sasl:{
-		username:"avnadmin",
+		username:"******",
 		password:"*****",
 		mechanism:"plain"
 	},
