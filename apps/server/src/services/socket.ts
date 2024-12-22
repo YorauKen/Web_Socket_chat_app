@@ -1,5 +1,7 @@
 import { Server } from "socket.io";
 import Redis from "ioredis";
+import primsaClient from "./prisma";
+import { produceMessage } from "./kafka";
 
 const pub = new Redis({
 	host:'localhost',
@@ -39,10 +41,17 @@ class SocketService {
 			})
 		});
 
-		sub.on('message',(channel,message)=>{
+		sub.on('message',async (channel,message)=>{
 			if(channel == 'MESSAGES'){
 				console.log('from sub :' ,message);
 				io.emit('message',message);
+				/*await primsaClient.message.create({
+					data:{
+						text:message,
+					}
+				})*/
+				await produceMessage(message);
+				console.log("Message Produced to kafka broker");
 			}
 		});
 
