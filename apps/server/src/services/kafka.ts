@@ -9,11 +9,7 @@ const kafka = new Kafka({
 	ssl:{
 		ca:[fs.readFileSync(path.resolve("./ca.pem"),"utf-8")],	
 	},
-	sasl:{
-		username:"avnadmin",
-		password:"*****",
-		mechanism:"plain"
-	},
+	
 });
 
 let producer: Producer|null = null;
